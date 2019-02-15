@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>demo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form">
+
+      <!-- Form: {{ form.value | json }} -->
+    <ion-list>
+      <ion-item>
+        <ion-label>Firstname: {{ form.get('firstname').value }}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Lastname: {{ form.get('lastname').value }}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <h1>Address</h1>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Street: {{ form.get('address.street').value  }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>City: {{ form.get('address.city').value }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>State: {{ form.get('address.state').value }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Zipcode:{{ form.get('address.zipcode').value }}</ion-label>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <h1>School Detail</h1>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>SchoolName: {{ form.get('schoolInfo.schoolName').value  }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>GPA: {{ form.get('schoolInfo.gpa').value }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Street: {{ form.get('schoolInfo.schooladdress.state').value }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>City: {{ form.get('schoolInfo.schooladdress.city').value }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>State: {{ form.get('schoolInfo.schooladdress.state').value }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Zipcode:{{ form.get('schoolInfo.schooladdress.zipcode').value }}</ion-label>
+      </ion-item>
+
+    </ion-list>
+  </form>
+</ion-content>
