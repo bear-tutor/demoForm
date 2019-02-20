@@ -36,7 +36,8 @@
         <h1>Address</h1>
       </ion-item>
 
-      <div formGroupName="address">
+      <the-address [formItem]="user.get('address')"></the-address>
+      <!-- <div formGroupName="address">
         <ion-item>
           <ion-label>Street</ion-label>
           <ion-input type="text" formControlName="street" [class.invalid]="isValid('address.street')"></ion-input>
@@ -73,7 +74,7 @@
             กรุณากรอก
           </span>
         </ion-item>
-      </div>
+      </div> -->
     </ion-list>
 
     <ion-list>
@@ -101,7 +102,8 @@
         </span>
       </ion-item>
 
-      <div formGroupName="schooladdress">
+      <the-address [formItem]="user.get('schoolInfo.schooladdress')"></the-address>
+      <!-- <div formGroupName="schooladdress">
         <ion-item>
           <ion-label>Street</ion-label>
           <ion-input type="text" formControlName="street" [class.invalid]="isValid('schoolInfo.schooladdress.street')"></ion-input>
@@ -138,7 +140,7 @@
             กรุณากรอก
           </span>
         </ion-item>
-      </div>
+      </div> -->
     
     </div>
   </ion-list>

@@ -1,4 +1,38 @@
-<!-- Generated template for the TheAddressComponent component -->
-<div>
-  {{text}}
+<div [formGroup]="formItem" (ngSubmit)=onSubmit()>
+  <ion-item>
+    <ion-label>Street</ion-label>
+    <ion-input type="text" formControlName="street" [class.invalid]="isValid('street')"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="isValid('street')">
+    <span class="invalid-msg">
+      กรุณากรอก
+    </span>
+  </ion-item>
+  <ion-item>
+    <ion-label>City</ion-label>
+    <ion-input type="text" formControlName="city" [class.invalid]="isValid('city')"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="isValid('city')">
+    <span class="invalid-msg">
+      กรุณากรอก
+    </span>
+  </ion-item>
+  <ion-item>
+    <ion-label>State</ion-label>
+    <ion-input type="text" formControlName="state" [class.invalid]="isValid('state')"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="isValid('state')">
+    <span class="invalid-msg">
+      กรุณากรอก
+    </span>
+  </ion-item>
+  <ion-item>
+    <ion-label>Zipcode</ion-label>
+    <ion-input type="text" formControlName="zipcode" [class.invalid]="isValid('zipcode')"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="isValid('zipcode')">
+    <span class="invalid-msg">
+      กรุณากรอก
+    </span>
+  </ion-item>
 </div>

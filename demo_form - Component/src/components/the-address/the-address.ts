@@ -1,22 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-/**
- * Generated class for the TheAddressComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'the-address',
   templateUrl: 'the-address.html'
 })
 export class TheAddressComponent {
 
-  text: string;
+  @Input('formItem') public formItem: FormGroup;
+  private submitRequested: boolean;
 
-  constructor() {
-    console.log('Hello TheAddressComponent Component');
-    this.text = 'Hello World';
+  constructor(private fb: FormBuilder) {
+    this.formItem = fb.group({
+      'street': [null, Validators.required],
+      'city': [null, Validators.required],
+      'state': [null, Validators.required],
+      'zipcode': [null, Validators.required]
+    })
+  }
+
+  onSubmit() {
+    this.submitRequested = true;
+  }
+
+  public isValid(name: string): boolean {
+    var ctrl = this.formItem.get(name);
+    return ctrl.invalid && (ctrl.touched || this.submitRequested);
+    // 
   }
 
 }
